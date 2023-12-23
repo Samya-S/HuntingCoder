@@ -19,7 +19,7 @@ const blog = async () => {
   // In the app directory, data fetching with fetch() will default to cache: 'force-cache', which will cache the request data until manually invalidated. This is similar to getStaticProps in the pages directory.
   // In the app directory, getStaticPaths is replaced with generateStaticParams.
   // By setting the cache option to no-store, we can indicate that the fetched data should never be cached. This is similar to getServerSideProps in the pages directory.
-  const blogs = await fetch('http://localhost:3000/api/blogs', { cache: 'no-store' }).then((res) => res.json())
+  const blogs = await fetch(`${process.env.NEXT_PUBLIC_hostingDomain}/api/blogs`, { cache: 'no-store' }).then((res) => res.json())
 
   return (
     <div>
