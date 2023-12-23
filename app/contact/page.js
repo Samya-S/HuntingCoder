@@ -3,7 +3,7 @@
 import { useState } from 'react'
 import styles from './contact.module.css'
 
-const contact = () => {
+const Contact = () => {
   const [name, setname] = useState('')
   const [email, setemail] = useState('')
   const [phone, setphone] = useState('')
@@ -76,4 +76,4 @@ const contact = () => {
   )
 }
 
-export default contact
+export default Contact
