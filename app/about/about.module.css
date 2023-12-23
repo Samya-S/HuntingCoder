@@ -1,0 +1,22 @@
+.container{
+    margin:45px auto;
+    max-width: 45vw;
+}
+
+.container > * {
+    padding: 0.6rem 0;
+}
+.container > ul {
+    margin-left: 5%;
+}
+
+.center{
+    text-align: center;
+}
+
+@media only screen and (max-width: 600px) {
+    .container{
+        margin:40px auto;
+        max-width: 90vw; 
+    }
+}
