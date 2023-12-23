@@ -4,7 +4,7 @@ A blog for hunting coders by a hunting coder.
 
 This is a [Next.js](https://nextjs.org/) project bootstrapped with [`create-next-app`](https://github.com/vercel/next.js/tree/canary/packages/create-next-app).
 
-The application is deployed at: https://huntingcoder.vercel.app/
+The application is deployed at: https://huntingcoder-ss.vercel.app/
 
 ## Getting Started
 
