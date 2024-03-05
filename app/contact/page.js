@@ -10,7 +10,7 @@ const Contact = () => {
   const [desc, setdesc] = useState('')
 
   const handleSubmit = (event) => {
-    event.preventDefault()
+    event.preventDefault() // prevents page reload while submitting
     const data = {phone, name, email, desc};
 
     fetch(`${process.env.NEXT_PUBLIC_hostingDomain}/api/postcontact`, {
