@@ -1,4 +1,4 @@
-"use client"
+// "use client"
 import styles from './blogpost.module.css'
 
 const blogPostSlug = async ({ params }) => {
@@ -7,14 +7,12 @@ const blogPostSlug = async ({ params }) => {
 
     if (!blog) {
         return (
-            <h1 style={
-                {
-                    textAlign: 'center',
-                    margin: '40vh 0',
-                    fontWeight: 'normal',
-                    fontFamily: 'monospace'
-                }
-            }>
+            <h1 style={{
+                textAlign: 'center',
+                margin: '40vh 0',
+                fontWeight: 'normal',
+                fontFamily: 'monospace'
+            }}>
                 No such blog found!
             </h1>
         )
@@ -25,7 +23,8 @@ const blogPostSlug = async ({ params }) => {
             <main className={styles.main}>
                 <h1 className={styles.title}>{blog.title}</h1>
                 {/* <p className={styles.content} dangerouslySetInnerHTML={{ __html: data }}></p> */}
-                <p className={styles.content}>{blog.content}</p>
+                {/* <p className={styles.content}>{blog.content}</p> */}
+                <p className={styles.content} dangerouslySetInnerHTML={{__html: (blog.content).replace(/\n/g, '<br />')}}></p>
             </main>
         </div>
     )
