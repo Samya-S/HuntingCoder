@@ -20,6 +20,7 @@ const blogPostSlug = async ({ params }) => {
     const blog = await fetch(`${process.env.NEXT_PUBLIC_hostingDomain}/api/getBlog?slug=${params.slug}`, { cache: 'no-store' }).then((res) => res.json())
     // const data = blog.content
     // console.log(blog.content)
+    console.log(blog)
 
     return (
         <div>
