@@ -1,5 +1,17 @@
 import styles from './blogpost.module.css'
 
+export async function generateStaticParams() {
+    try {
+        const blogs = await fetch(`${process.env.NEXT_PUBLIC_hostingDomain}/api/blogs`, { cache: 'no-store' }).then((res) => res.json())
+
+        return blogs.map((blog) => ({
+            params: { slug: blog.slug }
+        }))
+    } catch (error) {
+        console.error(error)
+    }
+}
+
 const blogPostSlug = async ({ params }) => {
     /* server-side rendering */
     // In the app directory, data fetching with fetch() will default to cache: 'force-cache', which will cache the request data until manually invalidated. This is similar to getStaticProps in the pages directory.
