@@ -1,43 +1,36 @@
-'use client'
+// 'use client'
 
 import Image from 'next/image'
 import styles from './page.module.css'
+import Link from 'next/link'
 
-export default function Home() {
+const Home = async () => {
+  const blogs = await fetch(`${process.env.NEXT_PUBLIC_hostingDomain}/api/blogs`, { cache: 'no-store' }).then((res) => res.json())
+
   return (
     <main className={styles.main}>
-      <style jsx>
-        {`
-          
-        `}
-      </style>
-
       <h1 className={styles.title}>&lt;HuntingCoder/&gt;</h1>
-      
+
       <p className={styles.description}>
         A blog for hunting coders by a hunting coder
       </p>
 
-      <Image className={styles.homeImg} src="/homeImg.jpg" priority={true} alt="" width={600} height={400}/>
+      <Image className={styles.homeImg} src="/homeImg.jpg" priority={true} alt="" width={600} height={400} />
 
       <div className={styles.homeText}>
-          <h2 className={styles.h2}>Latest Blogs</h2>
-          <div>
-            <h3 className={styles.h3}>How to learn JavaScript in 2022?</h3>
-            <p>JavaScript is the language used to design logic for the web.</p>
-            <button className={styles.btn}>Read More</button>
-          </div>
-          <div>
-            <h3 className={styles.h3}>How to learn JavaScript in 2022?</h3>
-            <p>JavaScript is the language used to design logic for the web</p>
-            <button className={styles.btn}>Read More</button>
-          </div>
-          <div>
-            <h3 className={styles.h3}>How to learn JavaScript in 2022?</h3>
-            <p>JavaScript is the language used to design logic for the web</p>
-            <button className={styles.btn}>Read More</button>
-          </div>
-        </div>
+        <h2 className={styles.h2}>Latest Blogs</h2>
+        {blogs.map((blogItem) => {
+          return (
+            <div key={blogItem.title} className={styles.homeTextBLog}>
+              <h3 className={styles.h3}>{blogItem.title}</h3>
+              <p>{blogItem.content.substr(0, 300)}...</p>
+              <Link href={`/blogpost/${blogItem.slug}`}><button className={styles.btn}>Read More</button></Link>
+            </div>
+          )
+        })}
+      </div>
     </main>
   )
 }
+
+export default Home

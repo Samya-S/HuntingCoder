@@ -29,7 +29,7 @@ const blog = async () => {
           return (
             <Link key={blogItem.title} className={styles.blogDiv} href={`/blogpost/${blogItem.slug}`}>
               <h3>{blogItem.title}</h3>
-              <p className={styles.blogDivP}>{blogItem.content.substr(0,200)}...</p>
+              <p className={styles.blogDivP}>{blogItem.content.substr(0, 300)}...</p>
             </Link>
           )
         })}

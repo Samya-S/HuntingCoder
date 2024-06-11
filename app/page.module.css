@@ -238,13 +238,25 @@
   }
 }
 
+.homeText {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  padding: 2rem;
+}
+
+.homeTextBLog{
+  max-width: 60rem;
+}
+
 .homeText > * {
-  margin: 1rem 0;
+  margin: 1rem 0;  
 }
 
 .h2{
   text-align: center;
-  padding: 1rem 0;
+  padding-top: 1rem;
   font-size: 2rem;
 }
 
@@ -261,5 +273,5 @@
   cursor: pointer;
   border-radius: 6px;
   font-size: 0.9rem;
-  margin-bottom: 9px;
+  margin: 0.5rem 0;
 }
