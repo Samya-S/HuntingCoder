@@ -9,6 +9,7 @@ export async function generateStaticParams() {
         }))
     } catch (error) {
         console.error(error)
+        return []
     }
 }
 
