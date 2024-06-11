@@ -5,7 +5,7 @@ import styles from './page.module.css'
 import Link from 'next/link'
 
 const Home = async () => {
-  const blogs = await fetch(`${process.env.NEXT_PUBLIC_hostingDomain}/api/blogs`, { cache: 'no-store' }).then((res) => res.json())
+  const blogs = (await fetch(`${process.env.NEXT_PUBLIC_hostingDomain}/api/blogs`, { cache: 'no-store' }).then((res) => res.json())).slice(0, 3)
 
   return (
     <main className={styles.main}>
@@ -23,7 +23,7 @@ const Home = async () => {
           return (
             <div key={blogItem.title} className={styles.homeTextBLog}>
               <h3 className={styles.h3}>{blogItem.title}</h3>
-              <p>{blogItem.content.substr(0, 300)}...</p>
+              <p>{blogItem.content.replace(/<[^>]+>/g, '').substr(0, 300)}...</p>
               <Link href={`/blogpost/${blogItem.slug}`}><button className={styles.btn}>Read More</button></Link>
             </div>
           )

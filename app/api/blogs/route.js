@@ -12,5 +12,8 @@ export async function GET() {
     //     allBlogsData.push(blogData)
     // });
 
+    // randomise the order of the blogs
+    allBlogsData.sort(() => Math.random() - 0.5)
+
     return Response.json(allBlogsData)  
 }

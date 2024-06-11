@@ -24,12 +24,12 @@ const blog = async () => {
   return (
     <div>
       <main className={styles.main}>
-        <h2>Latest Blogs</h2>
+        <h1>Latest Blogs</h1>
         {blogs.map((blogItem) => {
           return (
             <Link key={blogItem.title} className={styles.blogDiv} href={`/blogpost/${blogItem.slug}`}>
-              <h3>{blogItem.title}</h3>
-              <p className={styles.blogDivP}>{blogItem.content.substr(0, 300)}...</p>
+              <h2 className={styles.blogTitle}>{blogItem.title}</h2>
+              <p className={styles.blogDivP}>{blogItem.content.replace(/<[^>]+>/g, '').substr(0, 300)}...</p>
             </Link>
           )
         })}
