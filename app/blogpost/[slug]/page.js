@@ -1,18 +1,19 @@
+"use client"
 import styles from './blogpost.module.css'
-import fs from 'fs/promises'
+// import fs from 'fs/promises'
 
-export async function generateStaticParams() {
-    try {
-        const blogs = await fetch(`${process.env.NEXT_PUBLIC_hostingDomain}/api/blogs`, { cache: 'no-store' }).then((res) => res.json())
+// export async function generateStaticParams() {
+//     try {
+//         const blogs = await fetch(`${process.env.NEXT_PUBLIC_hostingDomain}/api/blogs`, { cache: 'no-store' }).then((res) => res.json())
 
-        return blogs.map((blog) => ({
-            params: { slug: blog.slug }
-        }))
-    } catch (error) {
-        console.error(error)
-        return []
-    }
-}
+//         return blogs.map((blog) => ({
+//             params: { slug: blog.slug }
+//         }))
+//     } catch (error) {
+//         console.error(error)
+//         return []
+//     }
+// }
 
 const blogPostSlug = async ({ params }) => {
     /* server-side rendering */
