@@ -1,4 +1,3 @@
-// "use client"
 import styles from './blogpost.module.css'
 
 const blogPostSlug = async ({ params }) => {
@@ -24,7 +23,7 @@ const blogPostSlug = async ({ params }) => {
                 <h1 className={styles.title}>{blog.title}</h1>
                 {/* <p className={styles.content} dangerouslySetInnerHTML={{ __html: data }}></p> */}
                 {/* <p className={styles.content}>{blog.content}</p> */}
-                <p className={styles.content} dangerouslySetInnerHTML={{__html: (blog.content).replace(/\n/g, '<br />')}}></p>
+                <p className={styles.content} dangerouslySetInnerHTML={{ __html: (blog.content).replace(/\n/g, '<br />') }}></p>
             </main>
         </div>
     )
