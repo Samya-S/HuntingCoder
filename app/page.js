@@ -23,7 +23,7 @@ const Home = async () => {
           return (
             <div key={blogItem.title} className={styles.homeTextBLog}>
               <h3 className={styles.h3}>{blogItem.title}</h3>
-              <p>{blogItem.content.replace(/<[^>]+>/g, '').substr(0, 300)}...</p>
+              <p style={{textAlign: 'justify'}}>{blogItem.content.replace(/<[^>]+>/g, '').substr(0, 300)}...</p>
               <Link href={`/blogpost/${blogItem.slug}`}><button className={styles.btn}>Read More</button></Link>
             </div>
           )
