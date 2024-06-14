@@ -1,22 +1,24 @@
-.container{
-    margin:45px auto;
-    max-width: 45vw;
+.container {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
 }
 
-.container > * {
+.container>* {
     padding: 0.6rem 0;
+    width: 60rem;
+    max-width: 90vw;
 }
-.container > ul {
+
+.container>ul {
     margin-left: 5%;
 }
 
-.center{
-    text-align: center;
+.container>p {
+    text-align: justify;
 }
 
-@media only screen and (max-width: 600px) {
-    .container{
-        margin:40px auto;
-        max-width: 90vw; 
-    }
+.center {
+    text-align: center;
 }

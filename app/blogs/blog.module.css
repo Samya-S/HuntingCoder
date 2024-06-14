@@ -16,8 +16,9 @@
   border: 1px solid #dddddd26;
   border-radius: 8px;
   padding: 20px;
-  margin: 10px;
-  /* width: 25rem; */
+  /* margin: 10px; */
+  width: 60rem;
+  max-width: 95vw;
 }
 
 .blogCard {
@@ -63,7 +64,5 @@
 }
 
 .blogDivP {
-  padding: 0.25rem 0;
-  max-width: 45vw;
   text-align: justify;
 }

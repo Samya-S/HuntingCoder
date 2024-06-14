@@ -17,4 +17,11 @@
   line-height: 1.5rem;
   max-width: 70rem;
   padding: 2rem;
+  width: 100vw;
+}
+
+@media screen and (max-width: 600px){
+  .content{
+    padding: 2rem 1.2rem;
+  }
 }

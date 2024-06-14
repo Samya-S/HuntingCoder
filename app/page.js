@@ -3,6 +3,7 @@
 import Image from 'next/image'
 import styles from './page.module.css'
 import Link from 'next/link'
+import homeImg from '@/public/homeImg.jpg'
 
 const Home = async () => {
   const blogs = (await fetch(`${process.env.NEXT_PUBLIC_hostingDomain}/api/blogs`, { cache: 'no-store' }).then((res) => res.json())).slice(0, 3)
@@ -15,7 +16,7 @@ const Home = async () => {
         A blog for hunting coders by a hunting coder
       </p>
 
-      <Image className={styles.homeImg} src="/homeImg.jpg" priority={true} alt="" width={600} height={400} />
+      <Image className={styles.homeImg} src={homeImg} priority={true} alt="" />
 
       <div className={styles.homeText}>
         <h2 className={styles.h2}>Latest Blogs</h2>
